@@ -1,0 +1,92 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.login-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+/*  Hero 部分 */
+.login-hero {
+  height: 140px;
+}
+
+.login-hero .title {
+  font-size: 36px;
+  color: #FFFFFF;
+  line-height: 42px;
+  text-align: center;
+  margin-top: 54px;
+}
+
+.login-hero .slogan {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+
+/* form input 部分 */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.login-text-inputs {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.login-form input {
+  line-height: 56px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #E3E9EC;
+  text-indent: 20px;
+  color: #878787;
+}
+
+.login-form input::placeholder {
+  color: #CECECE;
+}
+
+.login-text-inputs-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-other-option {
+  margin-bottom: 35px;
+  margin-top: 15px;
+  text-align: center;
+}
+.login-other-option a {
+  color: white;
+  line-height: 20px;
+}
+
+.login-actions button {
+  display: block;
+  border: 0;
+  line-height: 56px;
+  outline: 0;
+  width: 280px;
+  margin: 0 auto;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 2px;
+  font-size: 14px;
+  color: #F77062;
+}
