@@ -27,11 +27,11 @@ class Cart extends Component {
     }
   }
   balance = () => {
-    if (this.props.cart.length !== 0) {
+    if (this.props.total !== 0) {
       this.props.dispatch({type:'SHOW_ALERT', alertMsg:'购买成功'})
       this.props.dispatch({type:'KONG', cart:[]})
     }else {
-      this.props.dispatch({type:'SHOW_ALERT', alertMsg:'请先购买商品'})
+      this.props.dispatch({type:'SHOW_ALERT', alertMsg:'请先选择商品'})
     }
     this.props.history.push("/dashboard")
   }
