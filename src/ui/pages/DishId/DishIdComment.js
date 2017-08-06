@@ -30,7 +30,7 @@ class DishIdComment extends Component {
       const commentsWrap = ids.map( id =>this.props.comments[id])
       const commentsId = commentsWrap.filter( item => item.dish._id === this.props.id)
       return(
-        <div style={{height:this.props.style? `${commentsId.length*81+65}px`:null}} className={"comment-all-wrap"}>
+        <div style={{height:this.props.style? `${commentsId.length*86+65}px`:null}} className={"comment-all-wrap"}>
           {
             commentsId.map((item, index) =>
               <div key={index} className="comment-write">
