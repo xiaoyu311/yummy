@@ -26,6 +26,15 @@ class Cart extends Component {
       this.fun()
     }
   }
+  balance = () => {
+    if (this.props.cart.length !== 0) {
+      this.props.dispatch({type:'SHOW_ALERT', alertMsg:'购买成功'})
+      this.props.dispatch({type:'KONG', cart:[]})
+    }else {
+      this.props.dispatch({type:'SHOW_ALERT', alertMsg:'请先购买商品'})
+    }
+    this.props.history.push("/dashboard")
+  }
   componentDidMount(){
     if (this.props.cart.length !== 0) {
       this.fun()
@@ -62,7 +71,7 @@ class Cart extends Component {
               )
             }
           </div>
-          <div className="cart-balance">结算</div>
+          <div onClick={this.balance} className="cart-balance">结算</div>
         </div>
       </div>
     )

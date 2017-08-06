@@ -11,8 +11,6 @@ class UserPage extends Component {
     if (users) {
       let usersAll = Object.keys(users).map( id => users[id])
       var user = usersAll.filter( item => item.username === username)[0]
-      console.log(user);
-
     }
     return(
       <div className="userpage">

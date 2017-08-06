@@ -20,6 +20,8 @@ export default function cartReducer(state = cart, actions){
         return item
       })
       return numSub
+    case 'KONG':
+      return actions.cart
     default:
       return state
   }

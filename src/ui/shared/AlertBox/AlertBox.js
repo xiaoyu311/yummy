@@ -5,18 +5,19 @@ import { connect } from 'react-redux'
 
 class AlertBox extends React.Component{
 
-  closeAlert = () => {
-    this.props.dispatch({type:'HIDE_ALERT'})
+  closeAlert = (e) => {
+    if (e.target.className === "alert-close-button" || e.target.className === "alert-box show") {
+      this.props.dispatch({type:'HIDE_ALERT'})
+    }
   }
   render(){
     return(
-      <div className= {this.props.showAlert ? "alert-box show" : "alert-box"}>
+      <div onClick={this.closeAlert} className= {this.props.showAlert ? "alert-box show" : "alert-box"}>
         <div className="alert-content-card">
           <div className="alert-msg">
             {this.props.alertMsg}
           </div>
           <div
-            onClick={this.closeAlert}
             className="alert-close-button">
             关闭
           </div>
