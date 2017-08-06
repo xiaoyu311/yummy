@@ -7,7 +7,6 @@ import MinCart from '../../shared/MinCart/MinCart'
 
 class Dashboard extends Component  {
   render() {
-    console.log(this.props.comments);
       if (Object.keys(this.props.comments).length !== 0) {
         const ids = Object.keys(this.props.comments).map( id => id)
         return(

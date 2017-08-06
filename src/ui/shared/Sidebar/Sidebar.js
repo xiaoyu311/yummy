@@ -28,7 +28,7 @@ class Sidebar extends Component {
   render() {
     let userInfo = (
       <div>
-        <Link to="" className="bm-user-left">
+        <Link onClick={this.closeBmMenu} to="/profile" className="bm-user-left">
           {this.props.username}
         </Link>
         <Link to="/"

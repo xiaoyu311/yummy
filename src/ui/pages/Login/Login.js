@@ -10,15 +10,30 @@ import { connect } from 'react-redux'
 
 class Login extends Component {
 
+  state = {
+    userId:''
+  }
+
   handlelogin = (e) => {
     e.preventDefault()
     let username = this.usernameInput.value
     let password = this.passwordInput.value
     axios.post(`${Settings.host}/user/login`, {username, password})
       .then( res => {
+        this.setState({userId:res.data.userId})
         this.props.dispatch({type:'SIGN_UP', username:res.data.username})
         this.props.history.push('/dashboard')
         localStorage.setItem('userId',res.data.userId)
+      })
+      .then( res =>{
+        axios.get(`${Settings.host}/user/${this.state.userId}`)
+          .then( res =>{
+            if (res.data.user.avatar) {
+              this.props.dispatch({type:'LOAD_AVATAR', avatar:`${Settings.host}/uploads/avatars/${res.data.user.avatar}`})
+            }else{
+              this.props.dispatch({type:'LOAD_AVATAR',avatar:'http://media.haoduoshipin.com/yummy/default-avatar.png'})
+            }
+          })
       })
       .catch( err => this.props.dispatch({type:'SHOW_ALERT',alertMsg:err.response.data.msg}))
   }
