@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TitleHeader from '../../shared/TitleHeader/TitleHeader'
 import './cart.css'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 class Cart extends Component {
@@ -38,8 +39,11 @@ class Cart extends Component {
           <div className="cart-total">${this.props.total}</div>
         </div>
         <div className="cart-item-wrap">
-          <div className="cart-item-all">
+          <div className={this.props.cart.length === 0?"cart-item-all-two":"cart-item-all"}>
             {
+              this.props.cart.length === 0 ?
+              <Link to="/dashboard">点我去购物</Link>
+              :
               this.props.cart.map( item =>
                 <div key={item.id} className="cart-item">
                   <div className="cart-item-left">

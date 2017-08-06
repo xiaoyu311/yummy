@@ -69,3 +69,12 @@
   text-align: center;
   line-height: 70px;
 }
+.cart-item-all-two{
+  margin-top: 50px;
+  text-align: center;
+}
+.cart-item-all-two>a{
+  color: #F77062;
+  font-size: 30px;
+
+}
