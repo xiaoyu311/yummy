@@ -19,7 +19,15 @@ class Signup extends Component {
         this.props.dispatch({type:'SIGN_UP', username:res.data.username})
         this.props.history.push('/dashboard')
         localStorage.setItem('userId',res.data.userId)
-      }).catch( err => {
+      })
+      .then( res =>{
+        axios.get(`${Settings.host}/user/${localStorage.userId}`)
+          .then( res =>{
+              this.props.dispatch({type:'LOAD_AVATAR',avatar:'http://media.haoduoshipin.com/yummy/default-avatar.png'})
+              this.props.dispatch({type:'EDIT', edit:'编辑个性签名'})
+          })
+        })
+      .catch( err => {
         this.props.dispatch({type:'SHOW_ALERT', alertMsg:err.response.data.msg})
       })
 

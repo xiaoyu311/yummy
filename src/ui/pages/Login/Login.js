@@ -10,10 +10,6 @@ import { connect } from 'react-redux'
 
 class Login extends Component {
 
-  state = {
-    userId:''
-  }
-
   handlelogin = (e) => {
     e.preventDefault()
     let username = this.usernameInput.value
@@ -26,12 +22,17 @@ class Login extends Component {
         localStorage.setItem('userId',res.data.userId)
       })
       .then( res =>{
-        axios.get(`${Settings.host}/user/${this.state.userId}`)
+        axios.get(`${Settings.host}/user/${localStorage.userId}`)
           .then( res =>{
             if (res.data.user.avatar) {
               this.props.dispatch({type:'LOAD_AVATAR', avatar:`${Settings.host}/uploads/avatars/${res.data.user.avatar}`})
             }else{
               this.props.dispatch({type:'LOAD_AVATAR',avatar:'http://media.haoduoshipin.com/yummy/default-avatar.png'})
+            }
+            if (res.data.user.slogan) {
+              this.props.dispatch({type:'EDIT', edit:res.data.user.slogan})
+            }else{
+              return
             }
           })
       })
