@@ -32,14 +32,7 @@ class App extends Component {
         .then( res =>{
           store.dispatch({type:'SIGN_UP',username:res.data.user.username})
         })
-    }
-    axios.get(`${settings.host}/dishes`)
-      .then( res =>{
-        let { dishes } = res.data
-        store.dispatch({type:'LOAD_DISHES', dishes})
-      })
-      .catch( err =>console.log(err))
-    axios.get(`${settings.host}/users`)
+      axios.get(`${settings.host}/users`)
       .then( res => {
         store.dispatch({type:'ADD_USERS', users:res.data.users})
         if (res.data.users[userId].slogan) {
@@ -53,6 +46,13 @@ class App extends Component {
           return
         }
       })
+    }
+    axios.get(`${settings.host}/dishes`)
+      .then( res =>{
+        let { dishes } = res.data
+        store.dispatch({type:'LOAD_DISHES', dishes})
+      })
+      .catch( err =>console.log(err))
     axios.get(`${settings.host}/comments`).then(
       res => {
         const { comments } = res.data
