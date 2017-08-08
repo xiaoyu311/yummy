@@ -1,5 +1,5 @@
 const Settings = {
-  host: 'http://yummy.haoduoshipin.com'
+  host: '//yummy.haoduoshipin.com'
 }
 
 export default Settings
