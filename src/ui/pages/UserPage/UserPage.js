@@ -19,7 +19,7 @@ class UserPage extends Component {
           users ?
           <div className="userpage-wrap">
             <img
-              src={user.avatar?`${settings.host}/uploads/avatars/${user.avatar}`:'http://media.haoduoshipin.com/yummy/default-avatar.png'}
+              src={user.avatar?`${settings.host}/uploads/avatars/${user.avatar}`:'https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true'}
               alt="img" />
             <div className="userpage-name">{user.username}</div>
             <div className="userpage-synopsis">

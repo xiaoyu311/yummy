@@ -23,7 +23,7 @@ class Sidebar extends Component {
   logout = () => {
     localStorage.removeItem('userId')
     this.props.dispatch({type:'LOG_OUT'})
-    this.props.dispatch({type:'LOAD_AVATAR', avatar:`http://media.haoduoshipin.com/yummy/default-avatar.png`})
+    this.props.dispatch({type:'LOAD_AVATAR', avatar:`https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true`})
   }
   render() {
     let userInfo = (

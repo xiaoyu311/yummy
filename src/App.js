@@ -19,7 +19,7 @@ import settings from './settings'
 
 
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom'

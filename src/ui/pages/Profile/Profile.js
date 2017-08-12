@@ -96,7 +96,7 @@ class Profile extends Component {
                 <div className="friend-item" key={id}>
                   <div className="friend-name-wrap">
                     <Link to={`/user/${this.props.users[id].username}`}>
-                      <img src={this.props.users[id].avatar? `${settings.host}/uploads/avatars/${this.props.users[id].avatar}` : 'http://media.haoduoshipin.com/yummy/default-avatar.png'} alt="img" />
+                      <img src={this.props.users[id].avatar? `${settings.host}/uploads/avatars/${this.props.users[id].avatar}` : 'https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true'} alt="img" />
                     </Link>
                     <div className="friend-name">{this.props.users[id].username}</div>
                   </div>

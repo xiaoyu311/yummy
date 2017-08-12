@@ -30,7 +30,7 @@ class Login extends Component {
               if (res.data.user.avatar) {
                 this.props.dispatch({type:'LOAD_AVATAR', avatar:`${Settings.host}/uploads/avatars/${res.data.user.avatar}`})
               }else{
-                this.props.dispatch({type:'LOAD_AVATAR',avatar:'http://media.haoduoshipin.com/yummy/default-avatar.png'})
+                this.props.dispatch({type:'LOAD_AVATAR',avatar:'https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true'})
               }
               if (res.data.user.slogan) {
                 this.props.dispatch({type:'EDIT', edit:res.data.user.slogan})

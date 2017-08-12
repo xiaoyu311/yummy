@@ -37,7 +37,7 @@ class DishIdComment extends Component {
                 <div className="comment-write-name-wrap">
                   <Link to={`/user/${item.user.username}`}>
                     <img
-                      src={item.user.avatar?`${settings.host}/uploads/avatars/${item.user.avatar}`:'http://media.haoduoshipin.com/yummy/default-avatar.png'}
+                      src={item.user.avatar?`${settings.host}/uploads/avatars/${item.user.avatar}`:'https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true'}
                       alt="img" />
                   </Link>
                   <div className="comment-write-wrap">

@@ -1,4 +1,4 @@
-let avatar = 'http://media.haoduoshipin.com/yummy/default-avatar.png'
+let avatar = 'https://github.com/xiaoyu311/yummy-images/blob/master/default-avatar.png?raw=true'
 
 
 export default function avatarReducer (state = avatar, actions){
